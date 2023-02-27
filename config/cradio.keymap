@@ -65,13 +65,15 @@
         sv_aa: sv_aa {
             label = "MACRO_sv_lower_aa";
             compatible = "zmk,behavior-macro";
+            wait-ms = <40>;
+            tap-ms = <40>;
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
                 , <&macro_tap &kp A>
                 , <&macro_release &kp LALT>;
         };
-        /*sv_AA: sv_AA {
+        sv_aa_U: sv_aa_U {
             label = "MACRO_sv_upper_aa";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -81,7 +83,7 @@
                 , <&macro_tap &kp A>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp LALT>;
-        };*/
+        };
         sv_ae: sv_ae {
             label = "MACRO_sv_lower_ae";
             compatible = "zmk,behavior-macro";
@@ -92,7 +94,7 @@
                 , <&macro_release &kp LALT>
                 , <&macro_tap &kp A>;
         };
-        /*sv_AE: sv_AE {
+        sv_AE_U: sv_AE_U {
             label = "MACRO_sv_upper_AE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -103,7 +105,7 @@
                 , <&macro_press &kp LSHFT>
                 , <&macro_tap &kp A>
                 , <&macro_release &kp LSHFT>;
-        };*/
+        };
         sv_oe: sv_oe {
             label = "MACRO_sv_lower_oe";
             compatible = "zmk,behavior-macro";
@@ -114,7 +116,7 @@
                 , <&macro_release &kp LALT>
                 , <&macro_tap &kp O>;
         };
-        /*sv_OE: sv_OE {
+        sv_OE_U: sv_OE_U {
             label = "MACRO_sv_upper_OE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -125,7 +127,7 @@
                 , <&macro_press &kp LSHFT>
                 , <&macro_tap &kp O>
                 , <&macro_release &kp LSHFT>;
-        };*/
+        };
         arrow: arrow {
             label = "MACRO_cpp_arrow";
             compatible = "zmk,behavior-macro";
@@ -209,7 +211,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │ PREV WIN │ NEXT WIN │          │          │   │ PAGE UP  │ HOME     │ UP       │ END      │  BKSP    │
-            &kp ESC    &none      &none      &none      &none          &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp BSPC
+           &kp ESC  &kp LG(LS(GRAVE)) &kp LG(GRAVE) &none &none        &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  ENTER   │
             &trans     &trans     &trans     &trans     &trans         &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
