@@ -13,8 +13,8 @@
 #define NAV 4
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LCTRL k2  &ht LALT k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RALT k2  &ht RCTRL k3  &ht RSHFT k4
+#define HRML(k1,k2,k3,k4) &lhm LSHFT k1  &lhm LCTRL k2  &lhm LALT k3  &lhm LGUI k4
+#define HRMR(k1,k2,k3,k4) &rhm RGUI k1  &rhm RALT k2  &rhm RCTRL k3  &rhm RSHFT k4
 
 #define COMBO(NAME, BINDINGS, KEYPOS) \
     combo_##NAME { \
@@ -30,10 +30,35 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <150>;
             global-quick-tap;
+            retro-tap;
             bindings = <&kp>, <&kp>;
+        };
+
+        lhm: left_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            retro-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5>, <6>, <7>, <8>, <9>, <15>, <16>, <17>, <18>, <19>, <25>, <26>, <27>, <28>, <29>, <32>, <33>;
+        };
+
+        rhm: right_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_HOMEROW_MODS";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            retro-tap;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0>, <1>, <2>, <3>, <4>, <10>, <11>, <12>, <13>, <14>, <20>, <21>, <22>, <23>, <24>, <30>, <31>;
         };
 
         sv_aa: Swedish_aa {
@@ -173,7 +198,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z    &ht LG(X) X  &ht LG(C) C  &ht LG(V) V  &kp B      &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mo NAV    &mo NUM        &mo SYM    &kp SPACE
+                                             &mo NAV    &mo NUM        &mo SYM    &ht LC(LS(LALT)) SPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
