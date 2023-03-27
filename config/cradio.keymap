@@ -23,6 +23,7 @@
         timeout-ms = <40>; \
         bindings = <BINDINGS>; \
         key-positions = <KEYPOS>; \
+	layers = <DEFAULT NAV>; \
     }
 
 / {
