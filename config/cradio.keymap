@@ -291,13 +291,13 @@
         //│  TAB     │  Q       │  W       │  E       │  R       │   │  ?       │  ?       │  ?       │  ?       │  ESC     │
             &kp TAB    &kp Q      &kp W      &kp E      &kp R          &none      &none      &none      &none      &kp ESC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  SHFT    │  A       │  S       │  D       │  F       │   │  ?       │  ?       │  ?       │  ?       │  ?       │
-           &kp LSHIFT  &kp A      &kp S      &kp D      &kp F          &none      &none      &none      &none      &none
+        //│  SHFT    │  A       │  S       │  D       │  F       │   │  ?       │  ?       │  ?       │  ?       │ ALT-TAB  │
+           &kp LSHIFT  &kp A      &kp S      &kp D      &kp F          &none      &none      &none      &none     &kp LA(TAB)
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  CTRL    │  Z       │  X       │  C       │  V       │   │  ?       │  ?       │  ?       │  ?       │ un-game
            &kp LCTRL   &kp Z      &kp X      &kp C      &kp V          &none      &none      &none      &none      &tog GAME
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPC    &mo GAME2      &none      &none
+                                             &kp SPC    &mo GAME2      &kp LALT   &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
