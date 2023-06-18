@@ -188,8 +188,8 @@
         //│  F6      │  F7      │  F8      │  F9      │  F10     │   │  ö       │  4       │  5       │  6       │          │
            &ht LSHFT F6  &kp F7   &kp F8     &kp F9     &kp F10        &sv_oe     &kp N4     &kp N5     &kp N6     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  F11     │  F12     │ CAPSWORD │          │          │   │  ä       │  1       │  2       │  3       │          │
-            &kp F11    &kp F12   &caps_word  &none      &none          &sv_ae     &kp N1     &kp N2     &kp N3     &none
+        //│  F11     │  F12     │          │          │          │   │  ä       │  1       │  2       │  3       │          │
+            &kp F11    &kp F12    &none      &none      &none          &sv_ae     &kp N1     &kp N2     &kp N3     &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &kp N0
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -233,14 +233,14 @@
         navigation_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │ PREV WIN │ NEXT WIN │          │          │   │ PAGE UP  │ HOME     │ UP       │ END      │  BKSP    │
-           &kp ESC  &kp LG(LS(GRAVE)) &kp LG(GRAVE) &none &none        &kp PG_UP  &kp HOME   &kp UP     &kp END    &kp BSPC
+        //│          │ PREV WIN │ NEXT WIN │          │          │   │ PAGE UP  │ HOME     │ UP       │ END      │          │
+            &none    &kp LG(LS(GRAVE)) &kp LG(GRAVE) &none &none       &kp PG_UP  &kp HOME   &kp UP     &kp END    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  ENTER   │
-            &trans     &trans     &trans     &trans     &trans         &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
+        //│          │          │          │          │          │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │          │
+            &trans     &trans     &trans     &trans     &none         &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  CUT     │  COPY    │  PASTE   │          │   │          │          │          │          │  DEL     │
-            &trans     &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans         &none      &none      &none      &none      &kp DEL
+        //│          │  CUT     │  COPY    │  PASTE   │          │   │          │          │          │          │          │
+            &none      &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          &none      &none      &none      &none      &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -259,7 +259,7 @@
         //│  CTRL    │  Z       │  X       │  C       │  V       │   │  ?       │  ?       │  ?       │  ?       │ un-game
            &kp LCTRL   &kp Z      &kp X      &kp C      &kp V          &none      &none      &none      &none      &tog GAME
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp SPC    &mo GAME2      &kp LALT   &none
+                                             &kp SPC    &mo GAME2      &none     &none
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
