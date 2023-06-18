@@ -77,7 +77,7 @@
             compatible = "zmk,behavior-mod-morph";
             label = "SWEDISH_AA";
             #binding-cells = <0>;
-            bindings = <&sv_aa_L>, <&sv_aa_U>;
+            bindings = <&kp LA(A)>, <&kp LS(LA(A))>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         sv_ae: Swedish_ae {
@@ -123,73 +123,37 @@
     };
 
     macros {
-        sv_aa_L: sv_aa_L {
-            label = "MACRO_sv_lower_aa";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <40>;
-            tap-ms = <40>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LALT>;
-        };
-        sv_aa_U: sv_aa_U {
-            label = "MACRO_sv_upper_aa";
-            compatible = "zmk,behavior-macro";
-            wait-ms = <40>;
-            tap-ms = <40>;
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LALT>;
-        };
         sv_ae_L: sv_ae_L {
             label = "MACRO_sv_lower_ae";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp A>;
+                = <&kp LA(U)>
+                , <&kp A>;
         };
         sv_ae_U: sv_ae_U {
             label = "MACRO_sv_upper_AE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp A>
-                , <&macro_release &kp LSHFT>;
+                = <&kp LA(U)>
+                , <&kp LS(A)>;
         };
         sv_oe_L: sv_oe_L {
             label = "MACRO_sv_lower_oe";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp O>;
+                = <&kp LA(U)>
+                , <&kp O>;
         };
         sv_oe_U: sv_oe_U {
             label = "MACRO_sv_upper_OE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp U>
-                , <&macro_release &kp LALT>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp O>
-                , <&macro_release &kp LSHFT>;
+                = <&kp LA(U)>
+                , <&kp LS(O)>;
         };
         arrow: arrow {
             label = "MACRO_cpp_arrow";
