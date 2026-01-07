@@ -81,6 +81,28 @@
             release-after-ms = <2000>;
             quick-release;
         };
+
+        sv_aa: Swedish_aa {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SWEDISH_AA";
+            #binding-cells = <0>;
+            bindings = <&sv_aa_L>, <&sv_aa_U>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sv_ae: Swedish_ae {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SWEDISH_AE";
+            #binding-cells = <0>;
+            bindings = <&sv_ae_L>, <&sv_ae_U>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sv_oe: Swedish_oe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SWEDISH_OE";
+            #binding-cells = <0>;
+            bindings = <&sv_oe_L>, <&sv_oe_U>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
@@ -104,6 +126,68 @@
     };
 
     macros {
+        /* Swedish ALT codes:
+            å: Alt + 134
+            Å: Alt + 143
+            ä: Alt + 132
+            Ä: Alt + 142
+            ö: Alt + 148
+            Ö: Alt + 153
+        */
+        sv_aa_L: sv_aa_L {
+            label = "MACRO_sv_lower_aa";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N3 &kp KP_N4>
+                , <&macro_release &kp LALT>;
+        };
+        sv_aa_U: sv_aa_U {
+            label = "MACRO_sv_upper_aa";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N4 &kp KP_N3>
+                , <&macro_release &kp LALT>;
+        };
+        sv_ae_L: sv_ae_L {
+            label = "MACRO_sv_lower_ae";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N3 &kp KP_N2>
+                , <&macro_release &kp LALT>;
+        };
+        sv_ae_U: sv_ae_U {
+            label = "MACRO_sv_upper_ae";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N4 &kp KP_N2>
+                , <&macro_release &kp LALT>;
+        };
+        sv_oe_L: sv_oe_L {
+            label = "MACRO_sv_lower_oe";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N4 &kp KP_N8>
+                , <&macro_release &kp LALT>;
+        };
+        sv_oe_U: sv_oe_U {
+            label = "MACRO_sv_upper_oe";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp KP_N1 &kp KP_N5 &kp KP_N3>
+                , <&macro_release &kp LALT>;
+        };
         arrow: arrow {
             label = "MACRO_cpp_arrow";
             compatible = "zmk,behavior-macro";
@@ -127,10 +211,10 @@
         
         number_layer {
             bindings = <
-    &kp F1  &kp F2  &kp F3 &kp F4 &kp F5    &none &kp N7 &kp N8 &kp N9 &none
-    &kp F6  &kp F7  &kp F8 &kp F9 &kp F10   &none &kp N4 &kp N5 &kp N6 &none
-    &kp F11 &kp F12 &none  &none  &kp RALT  &none &kp N1 &kp N2 &kp N3 &none
-                    &trans &trans &trans    &trans &kp N0 &trans
+    &kp F1  &kp F2  &kp F3 &kp F4  &kp F5      &sv_aa &kp N7 &kp N8 &kp N9 &none
+    &kp F6  &kp F7  &kp F8 &kp F9  &kp F10     &sv_oe &kp N4 &kp N5 &kp N6 &none
+    &kp F11 &kp F12 &none  &kp LALT &kp RALT   &sv_ae &kp N1 &kp N2 &kp N3 &none
+                        &trans &trans &trans   &trans &kp N0 &trans
             >;
         };
 
